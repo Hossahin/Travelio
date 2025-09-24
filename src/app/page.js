@@ -16,6 +16,7 @@ export default function Home() {
         <p className="text-white">Your one-stop solution for all your travel needs.</p>
         <p>hello are you okay</p>
         <p>i am fine</p>
+        <p>oh nice and you</p>
       </div>
 
     </div>
