@@ -14,6 +14,7 @@ export default function Home() {
       <div className="mt-8 w-full mx-auto bg-gray-500 rounded-2xl text-center p-8 border border-gray-700"> 
         <h1 className="text-xl font-bold text-white">Welcome to Travelio</h1>
         <p className="text-white">Your one-stop solution for all your travel needs.</p>
+        <p>hello are you okay</p>
       </div>
 
     </div>
