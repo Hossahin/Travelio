@@ -3,12 +3,13 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect, usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Loading from "./Loading";
 
 function Navbar() {
   const { data: session, status } = useSession();
+  const [loading, setLoading] = useState(false);
 
   if (status === "loading") {
     return <Loading />;
@@ -18,23 +19,29 @@ function Navbar() {
   const pathname = usePathname();
 
   const handleSignOut = async () => {
+    setLoading(true);
     try {
       await signOut({ redirect: false });
       await Swal.fire({
         icon: "success",
         title: "Logout successful",
-        timer: 2500,
+        timer: 1500,
         showConfirmButton: false,
       });
       router.push("/login");
+      setLoading(false);
     } catch (error) {
-      console.error("Logout failed:", error);
+      setLoading(false);
       Swal.fire({
         icon: "error",
         title: "Logout failed",
       });
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const Navlinks = (
     <>
