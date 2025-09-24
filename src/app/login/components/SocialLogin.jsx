@@ -9,17 +9,12 @@ export default function SocialLogin() {
   const session = useSession();
   const router = useRouter();
 
-
   const handleGoogleLogin = async (providerName) => {
     setLoading(true);
     // Implement Google login logic here
     await signIn(providerName, { redirect: false });
     setLoading(false);
   };
-
-  
-
-
 
   useEffect(() => {
     if (session?.status === "authenticated") {
