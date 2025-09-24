@@ -15,6 +15,7 @@ export default function Home() {
         <h1 className="text-xl font-bold text-white">Welcome to Travelio</h1>
         <p className="text-white">Your one-stop solution for all your travel needs.</p>
         <p>hello are you okay</p>
+        <p>i am fine</p>
       </div>
 
     </div>
