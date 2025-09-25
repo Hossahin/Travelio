@@ -17,6 +17,8 @@ export default function Home() {
         <p>hello are you okay</p>
         <p>i am fine</p>
         <p>oh nice and you</p>
+
+        <h1>Hello test</h1>
       </div>
 
     </div>
