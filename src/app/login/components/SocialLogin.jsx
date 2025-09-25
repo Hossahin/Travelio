@@ -13,9 +13,16 @@ export default function SocialLogin() {
 
   const handleGoogleLogin = async (providerName) => {
     setLoading(true);
-    // Implement Google login logic here
-    await signIn(providerName, { redirect: false });
-    setLoading(false);
+    try {
+      await signIn(providerName, { redirect: false });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      Swal.fire({
+        icon: "error",
+        title: "Login failed",
+      });
+    }
   };
 
   useEffect(() => {

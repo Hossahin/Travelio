@@ -96,7 +96,7 @@ export default function RegisterForm() {
       image: imageUrl,
     });
 
-    if (result.acknowledged) {
+    if (result.success) {
       const response = await signIn("credentials", {
         email: data.email,
         password: data.password,
@@ -117,14 +117,16 @@ export default function RegisterForm() {
           timer: 1500,
         });
       }
+      setLoading(false);
     } else {
       Swal.fire({
         icon: "error",
         title: "Registration failed",
+        text: result.message,
         timer: 1500,
       });
+      setLoading(false);
     }
-    form.reset();
     setLoading(false);
   };
 
