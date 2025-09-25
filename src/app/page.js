@@ -17,7 +17,12 @@ export default function Home() {
         <p>hello are you okay</p>
         <p>i am fine</p>
         <p>oh nice and you</p>
+<<<<<<< HEAD
         <p>hello world</p>
+=======
+
+        <h1>Hello test</h1>
+>>>>>>> 7a62b9807bdd6579dd052fb0b98946b2b0abe593
       </div>
 
     </div>
