@@ -2,25 +2,32 @@
 
 import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 import bcrypt from "bcrypt";
+
 export const registerUser = async (payload) => {
   const userCollection = dbConnect(collectionNameObj.userCollection);
-
   const { email, name, password } = payload;
 
   if (!email || !name || !password) {
-    return null;
+    return { success: false, message: "Missing required fields" };
   }
 
-  const user = await userCollection.findOne({ email: payload?.email });
+  const existingUser = await userCollection.findOne({ email });
+  if (existingUser) {
+    return { success: false, message: "Email already registered" };
+  }
 
-  if (!user) {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    payload.password = hashedPassword;
-    const result = await userCollection.insertOne(payload);
+  const hashedPassword = await bcrypt.hash(password, 10);
+  payload.password = hashedPassword;
+
+  const result = await userCollection.insertOne(payload);
+
+  if (result.acknowledged) {
     return {
-      acknowledged: result.acknowledged,
-      insertedId: result.insertedId.toString(),
+      success: true,
+      message: "Registration successful",
+      userId: result.insertedId.toString(),
     };
   }
-  return null;
+
+  return { success: false, message: "Database insert failed" };
 };
