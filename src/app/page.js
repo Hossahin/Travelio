@@ -24,6 +24,8 @@ export default function Home() {
 
       <div className="mt-8 w-full mx-auto bg-gray-500 rounded-2xl text-center p-8 border border-gray-700">
         <h1 className="text-xl font-bold text-white">Hello test</h1>
+
+        <h3 className="text-lg font-bold text-white">Test 123</h3>
       </div>
 
     </div>
