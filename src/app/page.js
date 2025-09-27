@@ -1,15 +1,10 @@
+import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
-      Hello, Next.js!
-
-
-      <p>my workplace nice</p>
-
-      <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
+     <HeroSection/>
     </div>
   );
 }

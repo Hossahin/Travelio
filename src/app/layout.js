@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
               <Navbar />
             </header>
 
-            <main className="flex-1 w-full max-w-screen-2xl mx-auto mt-20">
+            <main className="flex-1 w-full max-w-screen-2xl mx-auto">
               <div>{children}</div>
             </main>
 
