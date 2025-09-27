@@ -49,8 +49,10 @@ function Navbar() {
         <Link
           href="/"
           className={`${
-            pathname === "/" ? "text-blue-600 font-bold" : "text-gray-700"
-          } px-3 py-2 rounded  hover:text-blue-700 hover:bg-blue-100 border border-transparent hover:border-blue-700 transition-colors`}
+            pathname === "/"
+              ? "text-white font-bold bg-gradient-to-r from-blue-400 to-blue-700"
+              : "text-gray-700"
+          } px-3 py-2 rounded transition-colors`}
         >
           Home
         </Link>
@@ -60,9 +62,9 @@ function Navbar() {
           href="/packages"
           className={`${
             pathname === "/packages"
-              ? "text-blue-600 font-bold"
+              ? "text-white font-bold bg-gradient-to-r from-blue-400 to-blue-700"
               : "text-gray-700"
-          } px-3 py-2 rounded  hover:text-blue-700 hover:bg-blue-100 border border-transparent hover:border-blue-700 transition-colors`}
+          } px-3 py-2 rounded transition-colors`}
         >
           Packages
         </Link>
@@ -71,8 +73,10 @@ function Navbar() {
         <Link
           href="/blog"
           className={`${
-            pathname === "/blog" ? "text-blue-600 font-bold" : "text-gray-700"
-          } px-3 py-2 rounded  hover:text-blue-700 hover:bg-blue-100 border border-transparent hover:border-blue-700 transition-colors`}
+            pathname === "/blog"
+              ? "text-white font-bold bg-gradient-to-r from-blue-400 to-blue-700"
+              : "text-gray-700"
+          } px-3 py-2 rounded transition-colors`}
         >
           Blog
         </Link>
@@ -81,7 +85,7 @@ function Navbar() {
   );
 
   return (
-    <div className="navbar p-0 fixed top-0 left-0 right-0 z-50 shadow bg-base-100">
+    <div className="navbar p-0 fixed top-0 left-0 right-0 z-50 shadow bg-white/30 backdrop-blur-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -113,7 +117,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{Navlinks}</ul>
+        <ul className="menu menu-horizontal px-1 gap-4">{Navlinks}</ul>
       </div>
       <div className="navbar-end gap-2 pr-4">
         {status == "authenticated" ? (
@@ -127,7 +131,7 @@ function Navbar() {
                   alt="user"
                   objectFit="cover"
                   priority
-                  className="rounded-full border-2 border-blue-700"
+                  className="rounded-full border-2 border-blue-400"
                   height={50}
                   width={50}
                 />
@@ -135,8 +139,8 @@ function Navbar() {
                 {/* Logout button */}
                 <button
                   onClick={handleSignOut}
-                  className="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-lg 
-             hover:bg-blue-50 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200 shadow-sm"
+                  className="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-blue-400 border border-blue-400 rounded-lg 
+             hover:bg-blue-50 hover:text-blue-500 hover:border-blue-500 transition-colors duration-200 shadow-sm"
                 >
                   Logout
                 </button>
@@ -149,8 +153,8 @@ function Navbar() {
               {/* Filled button - Login */}
               <Link
                 href="/login"
-                className="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-lg 
-               hover:bg-blue-50 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200 shadow-sm"
+                className="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-blue-400 border border-blue-400 rounded-lg 
+               hover:bg-blue-50 hover:text-blue-500 hover:border-blue-500 transition-colors duration-200 shadow-sm"
               >
                 Login
               </Link>
@@ -158,8 +162,8 @@ function Navbar() {
               {/* Outline button - Register */}
               <Link
                 href="/register"
-                className="cursor-pointer px-4 py-2 text-sm font-medium text-blue-600 bg-transparent border border-blue-600 rounded-lg 
-               hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 shadow-sm"
+                className="cursor-pointer px-4 py-2 text-sm font-medium text-blue-500 bg-transparent border border-blue-400 rounded-lg 
+               hover:bg-blue-50 hover:text-blue-500 transition-colors duration-200 shadow-sm"
               >
                 Register
               </Link>
