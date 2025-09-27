@@ -55,6 +55,28 @@ function Navbar() {
           Home
         </Link>
       </li>
+      <li>
+        <Link
+          href="/packages"
+          className={`${
+            pathname === "/packages"
+              ? "text-blue-600 font-bold"
+              : "text-gray-700"
+          } px-3 py-2 rounded  hover:text-blue-700 hover:bg-blue-100 border border-transparent hover:border-blue-700 transition-colors`}
+        >
+          Packages
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/blog"
+          className={`${
+            pathname === "/blog" ? "text-blue-600 font-bold" : "text-gray-700"
+          } px-3 py-2 rounded  hover:text-blue-700 hover:bg-blue-100 border border-transparent hover:border-blue-700 transition-colors`}
+        >
+          Blog
+        </Link>
+      </li>
     </>
   );
 
