@@ -136,16 +136,13 @@ function Navbar() {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu rounded-box bg-base-200 z-1 w-52 p-2 shadow-sm"
+                      className="dropdown-content menu rounded-box bg-base-200 z-1 w-52 p-2 gap-2 shadow-sm"
                     >
                       <li>
                         <Link href="/profile">Profile</Link>
                       </li>
                       <li>
                         <Link href="/bookings">Bookings</Link>
-                      </li>
-                      <li>
-                        <Link href="/dashboard">Dashboard</Link>
                       </li>
                       <li>
                         <Link href="/dashboard">Dashboard</Link>
