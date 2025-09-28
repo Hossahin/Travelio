@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full mt-14">
+    <div className="relative w-full mt-15">
       {/* Video */}
      <div className="h-[300px] md:h-[600px]">
        <video
