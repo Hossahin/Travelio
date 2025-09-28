@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-screen-2xl mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextAuthProvider>
           <div className="min-h-screen flex flex-col">
