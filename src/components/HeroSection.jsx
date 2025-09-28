@@ -5,13 +5,15 @@ export default function HeroSection() {
   return (
     <div className="relative w-full mt-14">
       {/* Video */}
-      <video
+     <div className="h-[300px] md:h-[600px]">
+       <video
         src="/video/70463-538463758_small.mp4"
         autoPlay
         loop
         muted
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full h-full object-cover rounded-b-4xl"
       />
+     </div>
 
       {/* Overlay Text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -26,7 +28,7 @@ export default function HeroSection() {
 
       {/* Search Box */}
       <div className="absolute -bottom-100 md:-bottom-15 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-white/90 backdrop-blur-md p-6 rounded-lg shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-lg">
           {/* Keyword */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-1">Keyword</label>
@@ -80,7 +82,7 @@ export default function HeroSection() {
 
           {/* Search Button */}
           <div className="flex items-end">
-            <button className="cursor-pointer flex items-center justify-center bg-blue-400 hover:bg-blue-700 text-white px-6 py-3 rounded-lg w-full transition">
+            <button className="cursor-pointer flex items-center justify-center bg-blue-400 hover:bg-blue-500 text-white px-6 py-3 rounded-lg w-full transition">
               <FaSearch className="mr-2" /> Search
             </button>
           </div>
