@@ -2,6 +2,7 @@ import FeaturedPackages from "@/components/FeaturedPackages";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <main className="flex-1 w-full max-w-screen-2xl mx-auto">
         <HeroSection />
         <FeaturedPackages />
-        {/* More content can go here */}
+        <WhyChooseUs />
       </main>
 
       {/* Footer */}
