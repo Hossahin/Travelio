@@ -122,7 +122,7 @@ function Navbar() {
             <>
               {
                 <div className="flex items-center gap-2">
-                  <div className="dropdown dropdown-hover">
+                  <div className="dropdown dropdown-click dropdown-bottom dropdown-center cursor-pointer">
                     <div tabIndex={0} role="button" className="">
                       <Image
                         src={session?.user?.image}
@@ -136,7 +136,7 @@ function Navbar() {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu rounded-box bg-base-200 z-1 w-52 p-2 gap-2 shadow-sm"
+                      className="dropdown-content menu rounded-box bg-base-200 z-1 w-52 p-2 gap-2 shadow-lg mr-20"
                     >
                       <li>
                         <Link href="/profile">Profile</Link>
