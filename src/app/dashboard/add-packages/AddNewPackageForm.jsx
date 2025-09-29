@@ -23,7 +23,7 @@ import GroupSize from './components/BasicInformation/GroupSize';
 import Difficulty from './components/BasicInformation/Difficulty';
 import PackageType from './components/BasicInformation/PackageType';
 import AvailableSlots from './components/BasicInformation/AvailableSlots';
-import { createPackage } from '../actions/addTravelPackageAction';
+import { createPackage } from '@/app/actions/addTravelPackageAction';
 
 const AddNewPackageForm = () => {
     const [imagePreview, setImagePreview] = useState(null);
