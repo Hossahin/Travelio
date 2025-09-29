@@ -19,7 +19,51 @@ export const registerUser = async (payload) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   payload.password = hashedPassword;
 
-  const result = await userCollection.insertOne(payload);
+  const userData = {
+    ...payload,
+    role: "user",
+    emergencyContact: null,
+    dateOfBirth: null,
+    languages: [],
+
+    // --- User Specific ---
+    travelProfile: {
+      favoriteDestinations: [],
+      bio: null,
+      budgetRange: null,
+      wishlist: [],
+      bookings: [],
+      travelHistory: [],
+    },
+
+    // --- Guideer/Agency Specific ---
+    guideerInfo: {
+      isVerified: true,
+      bio: null,
+      location: null,
+      yearsOfExperience: null,
+      assignedPackages: [],
+      postedPackages: [],
+      earnings: {
+        totalEarned: 0,
+        pendingPayments: 0,
+        completedPayments: 0,
+      },
+      completedTours: 0,
+      averageRating: 0,
+      totalReviews: 0,
+      guideerStatus: "Active",
+    },
+
+    // --- Social Links ---
+    socialLinks: {
+      facebook: null,
+      instagram: null,
+    },
+    createdAt: new Date(),
+  };
+
+  const result = await userCollection.insertOne(userData);
 
   if (result.acknowledged) {
     return {
