@@ -1,29 +1,46 @@
-User Collection Database Design
-{
-"\_id": ObjectId,
-"name": "Md Hossahin",
-"email": "hossahin@example.com",
-"password": "hashed_password",
-"role": "User | Guideer | Admin",
-"profileImage": "https://example.com/avatar.jpg",
-"wishlist": [ObjectId("..."), ObjectId("...")], // references TourismPackages
-"emergencyContact": "+8801987654321",
-"travelProfile": {
-"favoriteDestinations": ["Cox's Bazar", "Sundarbans"],
-},
-"languages": ["English", "Bengali"], // useful for Guideer
-"assignedPackages": [ObjectId("...")], // for Guideer role
-"travelHistory": [
-{
-"packageId": ObjectId("..."), // reference to TourismPackages
-"guideerId": ObjectId("..."), // optional: the guide who assisted
-"startDate": "2025-09-01",
-"endDate": "2025-09-03",
-"status": "completed | cancelled | upcoming",
-"ratingGiven": 4, // optional, if user gave review
-"reviewId": ObjectId("...") // reference to Reviews collection
-}
-],
-"createdAt": "2025-09-25T08:00:00Z",
-"updatedAt": "2025-09-25T08:00:00Z"
-}
+const user = {
+  _id: ObjectId,
+  name: String,
+  email: String,
+  password: String, // hashed
+  role: "user", // "user" | "guideer" | "admin"
+  phone: null,
+  dateOfBirth: null,
+  languages: [],
+  socialLinks: {
+    facebook: null,
+    instagram: null,
+  },
+
+  // --- User Specific ---
+  wishlist: [],
+  bookings: [],
+  travelHistory: [],
+
+  // --- Guideer/Agency Specific (default null) ---
+  guideerInfo: {
+    bio: null,
+    location: null,
+    specialization: [],
+    yearsOfExperience: null,
+    assignedPackages: [],
+    postedPackages: [],
+    earnings: {
+      totalEarned: 0,
+      pendingPayments: 0,
+      completedPayments: 0,
+    },
+    completedTours: 0,
+    averageRating: 0,
+    totalReviews: 0,
+    guideerStatus: "Pending", // Pending | Active | Suspended
+  },
+
+  // --- Admin Specific ---
+  permissions: [],
+
+  // Common
+  isVerified: false, // Admin will verify
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
