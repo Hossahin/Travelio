@@ -49,21 +49,60 @@ export const authOptions = {
     async signIn({ user, account, profile, email, credentials }) {
       if (account) {
         const { providerAccountId, provider } = account;
-        const { email: user_email, image, name } = user;
+        const { email, image, name } = user;
         const userCollection = dbConnect(collectionNameObj.userCollection);
         const isExisted = await userCollection.findOne({ providerAccountId });
         if (!isExisted) {
           const payload = {
-            user_email,
-            image,
             name,
+            email,
+            image,
             provider,
             providerAccountId,
+            role: "user",
+            emergencyContact: null,
+            dateOfBirth: null,
+            languages: [],
+
+            // --- User Specific ---
+            travelProfile: {
+              favoriteDestinations: [],
+              bio: null,
+              budgetRange: null,
+              wishlist: [],
+              bookings: [],
+              travelHistory: [],
+            },
+
+            // --- Guideer/Agency Specific ---
+            guideerInfo: {
+              isVerified: true,
+              bio: null,
+              location: null,
+              yearsOfExperience: null,
+              assignedPackages: [],
+              postedPackages: [],
+              earnings: {
+                totalEarned: 0,
+                pendingPayments: 0,
+                completedPayments: 0,
+              },
+              completedTours: 0,
+              averageRating: 0,
+              totalReviews: 0,
+              guideerStatus: "Active",
+            },
+
+            // --- Social Links ---
+            socialLinks: {
+              facebook: null,
+              instagram: null,
+            },
+            createdAt: new Date(),
           };
           await userCollection.insertOne(payload);
         }
       }
-
       return true;
     },
   },
