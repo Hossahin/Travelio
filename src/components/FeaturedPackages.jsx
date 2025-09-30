@@ -39,7 +39,7 @@ export default function FeaturedPackages() {
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400">
-            Featured Packages
+            Featureds Packages
           </h2>
           <p className="mt-2 text-gray-600">
             Discover our latest 4 travel packages, handpicked for you.
